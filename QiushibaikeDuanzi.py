@@ -39,8 +39,8 @@ class qbdzDownloader(object):
         with open(self.fileDir,'w+') as fhand:
             for tag in tags:
                 time.sleep(2)
-                text=tag.findAll('div',{'class':'content'})[0].text
-                fhand.write(text)
+                text=tag.findAll('div',{'class':'content'})[0].text.strip()
+                fhand.write(text+'\n\n')
 
 
 qbd=qbdzDownloader()
